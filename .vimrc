@@ -7,6 +7,7 @@
 " mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 " cd ~/.vim/bundle
 " git clone git://github.com/tpope/vim-sensible.git
+" git clone https://github.com/bling/vim-airline
 " git clone https://github.com/python-rope/ropevim.git
 " cd ropevim && sudo pip install .
 "
