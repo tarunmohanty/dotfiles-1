@@ -23,5 +23,6 @@ do
   read line
   dat=$(~/.i3/measure-net-speed.bash)
   dat="[{ \"full_text\": \"${dat}\" },"
+  dat=$dat"{\"full_text\":\"Brightness: $(~/bin/adjustbrightness current)\"},"
   echo "${line/[/$dat}" || exit 1
 done)
