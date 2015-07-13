@@ -34,3 +34,5 @@ else
 fi
 
 alias fssh='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
+
+alias matrix='LC_ALL=C tr -c "[:digit:]" " " < /dev/urandom | pv --rate-limit 10k | dd cbs=$COLUMNS conv=unblock | GREP_COLOR="1;32" grep --color "[^ ]"'
