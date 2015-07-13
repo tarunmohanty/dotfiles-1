@@ -221,12 +221,14 @@ bindsym $mod+minus scratchpad show
 #
 bindsym XF86MonBrightnessUp exec /usr/bin/xbacklight -inc 10 && killall -USR1 i3status
 bindsym XF86MonBrightnessDown exec /usr/bin/xbacklight -dec 5 && killall -USR1 i3status
+
+# I currently use pa-applet for actually controlling the volume.
 #bindsym XF86AudioLowerVolume exec /usr/bin/pactl set-sink-volume 0 -- '-5%'
 #bindsym XF86AudioRaiseVolume exec /usr/bin/pactl set-sink-volume 0 -- '+5%'
 #bindsym XF86AudioMute exec /usr/bin/pactl set-sink-volume 0 0
-#bindsym XF86Launch1 exec /usr/bin/pactl play-sample that_was_easy
 
 bindsym XF86Tools exec gnome-control-center
+bindsym XF86Search exec google-chrome
 
 bindsym $mod+c exec "gsimplecal"
 for_window [class="Gsimplecal"] floating enable
