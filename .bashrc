@@ -9,8 +9,15 @@ fi
 
 #set -o vi
 
-source /usr/share/git-core/contrib/completion/git-prompt.sh
-export PS1='[\u@\h \W$(__git_ps1 "(%s)")]\$ '
+if [ -f `which powerline-daemon` ]; then
+  powerline-daemon -q
+  POWERLINE_BASH_CONTINUATION=1
+  POWERLINE_BASH_SELECT=1
+  . /usr/share/powerline/bash/powerline.sh
+fi
+
+#source /usr/share/git-core/contrib/completion/git-prompt.sh
+#export PS1='[\u@\h \W$(__git_ps1 "(%s)")]\$ '
 #export export PS1='[\u@\h \[\033[0;32m\]\W$(__git_ps1 "\[\033[0m\]\[\033[0;31m\](%s)\[\033[0m\]")]\$ '
 
 export EDITOR=vim
@@ -35,4 +42,6 @@ fi
 
 alias fssh='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
 
-alias matrix='LC_ALL=C tr -c "[:digit:]" " " < /dev/urandom | pv --rate-limit 10k | dd cbs=$COLUMNS conv=unblock | GREP_COLOR="1;32" grep --color "[^ ]"'
+alias matrix='LC_ALL=C tr -c "[:xdigit:]" " " < /dev/urandom | pv --rate-limit 10k | dd cbs=$COLUMNS conv=unblock | GREP_COLOR="1;32" grep --color "[^ ]"'
+
+alias mk="make -j$[$(nproc) + 1]"

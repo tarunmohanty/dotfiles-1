@@ -4,20 +4,21 @@
 "
 " Other setup:
 "
+" install: powerline, vim-plugin-powerline
+"
 " mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 " cd ~/.vim/bundle
+" git clone https://github.com/bling/vim-airline ~/.vim/bundle/vim-airline
 " git clone git://github.com/tpope/vim-sensible.git
-" git clone https://github.com/bling/vim-airline
+" git clone https://github.com/airblade/vim-gitgutter
 " git clone https://github.com/python-rope/ropevim.git
 " cd ropevim && sudo pip install .
+" http://jedi.jedidjah.ch/en/latest/
 "
 " Other plugins to consider:
 "
-" http://jedi.jedidjah.ch/en/latest/
-" https://github.com/alfredodeza/khuno.vim
 " https://github.com/kien/ctrlp.vim
 " https://github.com/alfredodeza/pytest.vim
-" https://github.com/airblade/vim-gitgutter
 " https://github.com/scrooloose/nerdcommenter
 " https://github.com/alfredodeza/coveragepy.vim
 " https://github.com/rking/ag.vim
@@ -25,14 +26,23 @@
 
 execute pathogen#infect()
 let g:jedi#use_splits_not_buffers = "right"
-au BufRead,BufNewFile */neutron/*.py let g:khuno_ignore="E125,E126,E128,E129,E265,H305,H404,H405"
-au BufRead,BufNewFile */nova/*.py let g:khuno_ignore="E121,E122,E123,E124,E125,E126,E127,E128,E129,E131,E251,H405"
+
+" powerline, can be used instead of vim-airline
+"python from powerline.vim import setup as powerline_setup
+"python powerline_setup()
+"python del powerline_setup
+
+set laststatus=2 " Always display the statusline in all windows
+set showtabline=2 " Always display the tabline, even if there is only one tab
+set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 
 " Enable vim (not old school vi) defaults
-set nocompatible
+" replaced by vim-sensible
+"set nocompatible
 
 " Include the ruler that tells the cursor position
-set ruler
+" handled by powerline
+"set ruler
 
 " Show vim commands as they are typed
 set showcmd
@@ -56,9 +66,6 @@ set scrolloff=8
 
 " Enable support for using a mouse when available
 "set mouse=a
-
-" Always show the status line
-set laststatus=2
 
 " Show matching brackets
 set showmatch
