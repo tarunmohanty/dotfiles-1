@@ -11,10 +11,16 @@ fi
 
 command -v powerline-daemon &>/dev/null
 if [ $? -eq 0 ]; then
-  powerline-daemon -q
-  POWERLINE_BASH_CONTINUATION=1
-  POWERLINE_BASH_SELECT=1
-  . /usr/share/powerline/bash/powerline.sh
+    powerline-daemon -q
+    POWERLINE_BASH_CONTINUATION=1
+    POWERLINE_BASH_SELECT=1
+    PL1=/usr/share/powerline/bash/powerline.sh
+    PL2=/usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline.sh
+    if [ -f $PL1 ] ; then
+        . $PL1
+    elif [ -f $PL2 ] ; then
+        . $PL2
+    fi
 fi
 
 #source /usr/share/git-core/contrib/completion/git-prompt.sh
