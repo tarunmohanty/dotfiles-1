@@ -1,0 +1,4 @@
+set background=dark
+color molokai
+set nospell
+set wrap

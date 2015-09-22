@@ -1,4 +1,7 @@
 "
+" NOTE: This is my old vim config before I switched to using spf13-vim.  For
+" more info, see https://github.com/spf13/spf13-vim
+"
 " My vimrc
 " Russell Bryant <russell@russellbryant.net>
 "
