@@ -1,2 +1,2 @@
 UnBundle 'nathanaelkane/vim-indent-guides'
-Bundle 'wincent/Command-T'
+UnBundle 'jiangmiao/auto-pairs'
