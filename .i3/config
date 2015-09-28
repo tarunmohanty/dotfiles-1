@@ -239,5 +239,5 @@ for_window [class="Gsimplecal"] move absolute position 1660px 850px
 for_window [class="XTerm"] floating enable
 
 #exec --no-startup-id gnome-screensaver &
-#bindsym $mod+q exec "lockscreen"
+#bindsym $mod+q exec "gnome-screensaver-command -l"
 bindsym $mod+q exec "i3lock -c 111111"
