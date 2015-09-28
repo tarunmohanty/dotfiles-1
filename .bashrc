@@ -28,6 +28,9 @@ fi
 #export export PS1='[\u@\h \[\033[0;32m\]\W$(__git_ps1 "\[\033[0m\]\[\033[0;31m\](%s)\[\033[0m\]")]\$ '
 
 export EDITOR=vim
+if which vimx >/dev/null 2>&1; then
+    alias vim="vimx"
+fi
 
 export PIP_DOWNLOAD_CACHE=~/.cache/pip
 
