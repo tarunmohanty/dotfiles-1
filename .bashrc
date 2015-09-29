@@ -9,23 +9,27 @@ fi
 
 #set -o vi
 
-command -v powerline-daemon &>/dev/null
-if [ $? -eq 0 ]; then
-    powerline-daemon -q
-    POWERLINE_BASH_CONTINUATION=1
-    POWERLINE_BASH_SELECT=1
-    PL1=/usr/share/powerline/bash/powerline.sh
-    PL2=/usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline.sh
-    if [ -f $PL1 ] ; then
-        . $PL1
-    elif [ -f $PL2 ] ; then
-        . $PL2
+if [ -f /usr/share/git-core/contrib/completion/git-prompt.sh ] ; then
+    source /usr/share/git-core/contrib/completion/git-prompt.sh
+fi
+export PS1='[\u@\h \W$(__git_ps1 "(%s)")]\$ '
+#export export PS1='[\u@\h \[\033[0;32m\]\W$(__git_ps1 "\[\033[0m\]\[\033[0;31m\](%s)\[\033[0m\]")]\$ '
+
+if [ $(tput colors) -ge 256 ] ; then
+    command -v powerline-daemon &>/dev/null
+    if [ $? -eq 0 ]; then
+        powerline-daemon -q
+        POWERLINE_BASH_CONTINUATION=1
+        POWERLINE_BASH_SELECT=1
+        PL1=/usr/share/powerline/bash/powerline.sh
+        PL2=/usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline.sh
+        if [ -f $PL1 ] ; then
+            . $PL1
+        elif [ -f $PL2 ] ; then
+            . $PL2
+        fi
     fi
 fi
-
-#source /usr/share/git-core/contrib/completion/git-prompt.sh
-#export PS1='[\u@\h \W$(__git_ps1 "(%s)")]\$ '
-#export export PS1='[\u@\h \[\033[0;32m\]\W$(__git_ps1 "\[\033[0m\]\[\033[0;31m\](%s)\[\033[0m\]")]\$ '
 
 export EDITOR=vim
 if which vimx >/dev/null 2>&1; then
