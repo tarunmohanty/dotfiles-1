@@ -59,3 +59,8 @@ alias fssh='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
 alias matrix='LC_ALL=C tr -c "[:xdigit:]" " " < /dev/urandom | pv --rate-limit 10k | dd cbs=$COLUMNS conv=unblock | GREP_COLOR="1;32" grep --color "[^ ]"'
 
 alias mk="make -j$[$(nproc) + 1]"
+
+if which thefuck >/dev/null 2>&1; then
+    # https://github.com/nvbn/thefuck
+    eval $(thefuck --alias)
+fi
