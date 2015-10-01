@@ -3,5 +3,8 @@ color molokai
 set nospell
 set wrap
 set autowrite
+set virtualedit=block
 
 au BufRead,BufNewFile *.py,*.pyw set sw=4 ts=4 expandtab textwidth=79
+
+au BufRead,BufNewFile *.md,*.rst set sw=4 ts=4 expandtab textwidth=80
