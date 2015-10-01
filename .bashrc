@@ -5,10 +5,6 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-# User specific aliases and functions
-
-#set -o vi
-
 if [ -f /usr/share/git-core/contrib/completion/git-prompt.sh ] ; then
     source /usr/share/git-core/contrib/completion/git-prompt.sh
 fi
