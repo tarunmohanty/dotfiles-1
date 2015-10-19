@@ -7,6 +7,8 @@ fi
 
 if [ -f /usr/share/git-core/contrib/completion/git-prompt.sh ] ; then
     source /usr/share/git-core/contrib/completion/git-prompt.sh
+elif [ -f /etc/bash.completion.d/git-prompt ] ; then
+    source /etc/bash_completion.d/git-prompt
 fi
 export PS1='[\u@\h \W$(__git_ps1 "(%s)")]\$ '
 #export export PS1='[\u@\h \[\033[0;32m\]\W$(__git_ps1 "\[\033[0m\]\[\033[0;31m\](%s)\[\033[0m\]")]\$ '
