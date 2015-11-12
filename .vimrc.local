@@ -4,6 +4,7 @@ set nospell
 set wrap
 set autowrite
 set virtualedit=block
+set mouse=
 
 au BufRead,BufNewFile *.py,*.pyw set sw=4 ts=4 expandtab textwidth=79
 
