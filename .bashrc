@@ -62,3 +62,5 @@ if which thefuck >/dev/null 2>&1; then
     # https://github.com/nvbn/thefuck
     eval $(thefuck --alias)
 fi
+
+alias git-fixes='git log -1 --pretty=format:"Fixes: %h (\"%s\")" --abbrev=12'
