@@ -27,4 +27,3 @@
         while read branch; do \
             git log -1 --format=format:\"%Cred$branch:%Cblue %s %Cgreen%h%Creset (%ar)\" $branch --; \
         done'"
-    bi = git branch-info
