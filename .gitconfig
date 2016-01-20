@@ -1,0 +1,30 @@
+[user]
+    name = Russell Bryant
+    email = rbryant@redhat.com
+[sendemail]
+    smtpserver = smtp.redhat.com
+    smtpserverport = 587
+[color]
+    ui = auto
+[gitreview]
+    username = russellb
+[alias]
+    # http://blog.wikichoon.com/2016/01/tips-for-querying-git-tags.html
+    tags = "!sh -c ' \
+        git for-each-ref --format=\"%(refname:short)\" refs/tags | \
+        while read tag; do \
+            git --no-pager log -1 --format=format:\"$tag %at\" $tag; echo; \
+        done | \
+        sort -k 2 | cut -f 1 --delimiter=\" \" | \
+        while read tag; do \
+            fmt=\"%Cred$tag:%Cblue %s %Cgreen%h%Creset (%ai)\"; \
+            git --no-pager log -1 --format=format:\"$fmt\" $tag; echo; \
+        done'"
+    # http://who-t.blogspot.com/2012/06/git-branch-info.html
+    branch-info = "!sh -c ' \
+        git branch --list --no-color | \
+        sed -e \"s/*/ /\" | \
+        while read branch; do \
+            git log -1 --format=format:\"%Cred$branch:%Cblue %s %Cgreen%h%Creset (%ar)\" $branch --; \
+        done'"
+    bi = git branch-info
