@@ -1,3 +1,6 @@
 let g:spf13_bundle_groups=['general', 'programming', 'ruby', 'python', 'go', 'javascript', 'html', 'misc', 'writing', 'puppet']
 let g:spf13_no_autochdir=1
 let g:syntastic_python_checkers = ["flake8"]
+
+au BufRead,BufNewFile *.py,*.pyw set sw=4 ts=4 expandtab textwidth=79
+au BufRead,BufNewFile *.md,*.rst set sw=4 ts=4 expandtab textwidth=79
